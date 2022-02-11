@@ -1,0 +1,832 @@
+<Sysmon schemaversion="4.32">
+   <!-- Capture all hashes -->
+   <HashAlgorithms>*</HashAlgorithms>
+   <DnsLookup>False</DnsLookup>
+   <ArchiveDirectory>Archive</ArchiveDirectory>
+   <EventFiltering>
+		<RuleGroup name="AppVStreamingUX_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">AppVStreamingUX.exe</Image>
+				<ImageLoaded condition="contains">DWMAPI.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="AppVStreamingUX_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">AppVStreamingUX.exe</Image>
+				<ImageLoaded condition="contains">d3d9.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="AppVStreamingUX_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">AppVStreamingUX.exe</Image>
+				<ImageLoaded condition="contains">igdumdim64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="calc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">calc.exe</Image>
+				<ImageLoaded condition="contains">PROPSYS.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="calc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">calc.exe</Image>
+				<ImageLoaded condition="contains">Secur32.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="calc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">calc.exe</Image>
+				<ImageLoaded condition="contains">MLANG.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="calc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">calc.exe</Image>
+				<ImageLoaded condition="contains">WININET.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="certreq_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">certreq.exe</Image>
+				<ImageLoaded condition="contains">rdpendp.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="change_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">change.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="charmap_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">charmap.exe</Image>
+				<ImageLoaded condition="contains">MSFTEDIT.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="chglogon_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">chglogon.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">dcntel.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">rdpendp.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">igd10iumd64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">igd12umd64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">igd12umd64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">igdusc64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">dxilconv.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">utcutil.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">appraiser.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="DeviceCensus_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">DeviceCensus.exe</Image>
+				<ImageLoaded condition="contains">updatepolicy.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dispdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dispdiag.exe</Image>
+				<ImageLoaded condition="contains">DXVA2.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dispdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dispdiag.exe</Image>
+				<ImageLoaded condition="contains">DXVA2.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="djoin_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">djoin.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dnscacheugc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dnscacheugc.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dxdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dxdiag.exe</Image>
+				<ImageLoaded condition="contains">dsound.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dxdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dxdiag.exe</Image>
+				<ImageLoaded condition="contains">dsound.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dxdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dxdiag.exe</Image>
+				<ImageLoaded condition="contains">rdpendp.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dxdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dxdiag.exe</Image>
+				<ImageLoaded condition="contains">DispBroker.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="dxdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">dxdiag.exe</Image>
+				<ImageLoaded condition="contains">MSFTEDIT.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="fixmapi_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">fixmapi.exe</Image>
+				<ImageLoaded condition="contains">mapistub.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="FXSCOVER_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">FXSCOVER.exe</Image>
+				<ImageLoaded condition="contains">FXSRESM.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="licensingdiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">licensingdiag.exe</Image>
+				<ImageLoaded condition="contains">cryptnet.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="logman_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">logman.exe</Image>
+				<ImageLoaded condition="contains">pdh.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="mcbuilder_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">mcbuilder.exe</Image>
+				<ImageLoaded condition="contains">mrmcoreR.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="msdtc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">msdtc.exe</Image>
+				<ImageLoaded condition="contains">COMRES.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="msdtc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">msdtc.exe</Image>
+				<ImageLoaded condition="contains">msdtcVSp1res.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="mspaint_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">mspaint.exe</Image>
+				<ImageLoaded condition="contains">MSFTEDIT.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="MuiUnattend_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">MuiUnattend.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netbtugc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netbtugc.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">IFMON.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">RASMONTR.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">AUTHFWCFG.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">DHCPCMONITOR.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">DOT3CFG.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">FWCFG.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">HNETMON.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">NETIOHLP.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">NETTRACE.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">NSHHTTP.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">NSHIPSEC.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">NSHWFP.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">P2PNETSH.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">PEERDISTSH.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">RPCNSH.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">WCNNETSH.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">WHHELPER.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">WLANCFG.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">WSHELPER.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">WWANCFG.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">userenv.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">userenv.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="netsh_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">netsh.exe</Image>
+				<ImageLoaded condition="contains">wcmapi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="oobeldr_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">oobeldr.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="phoneactivate_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">phoneactivate.exe</Image>
+				<ImageLoaded condition="contains">igdusc64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="PnPUnattend_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">PnPUnattend.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell.exe</Image>
+				<ImageLoaded condition="contains">amsi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell.exe</Image>
+				<ImageLoaded condition="contains">USERENV.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_ise_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell_ise.exe</Image>
+				<ImageLoaded condition="contains">DWMAPI.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_ise_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell_ise.exe</Image>
+				<ImageLoaded condition="contains">igdumdim64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_ise_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell_ise.exe</Image>
+				<ImageLoaded condition="contains">amsi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_ise_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell_ise.exe</Image>
+				<ImageLoaded condition="contains">USERENV.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="powershell_ise_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">powershell_ise.exe</Image>
+				<ImageLoaded condition="contains">avrt.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="PrintIsolationHost_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">PrintIsolationHost.exe</Image>
+				<ImageLoaded condition="contains">PrintIsolationProxy.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="de" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">de</Image>
+				<ImageLoaded condition="contains">cscapi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="query_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">query.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="ReAgentc_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">ReAgentc.exe</Image>
+				<ImageLoaded condition="contains">wdscore.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="RMActivate_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">RMActivate.exe</Image>
+				<ImageLoaded condition="contains">msdrm.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="RMActivate_isv_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">RMActivate_isv.exe</Image>
+				<ImageLoaded condition="contains">msdrm.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="RMActivate_ssp_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">RMActivate_ssp.exe</Image>
+				<ImageLoaded condition="contains">msdrm.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="RMActivate_ssp_isv_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">RMActivate_ssp_isv.exe</Image>
+				<ImageLoaded condition="contains">msdrm.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="RpcPing_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">RpcPing.exe</Image>
+				<ImageLoaded condition="contains">rpchttp.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="rwinsta_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">rwinsta.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="SlideToShutDown_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">SlideToShutDown.exe</Image>
+				<ImageLoaded condition="contains">igd10iumd64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="SlideToShutDown_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">SlideToShutDown.exe</Image>
+				<ImageLoaded condition="contains">igdusc64.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="stordiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">stordiag.exe</Image>
+				<ImageLoaded condition="contains">wldp.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="stordiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">stordiag.exe</Image>
+				<ImageLoaded condition="contains">amsi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="stordiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">stordiag.exe</Image>
+				<ImageLoaded condition="contains">USERENV.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="stordiag_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">stordiag.exe</Image>
+				<ImageLoaded condition="contains">storageusage.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="tscon_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">tscon.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="tskill_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">tskill.exe</Image>
+				<ImageLoaded condition="contains">utildll.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="UNPUXHost_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">UNPUXHost.exe</Image>
+				<ImageLoaded condition="contains">PROPSYS.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="UNPUXHost_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">UNPUXHost.exe</Image>
+				<ImageLoaded condition="contains">MLANG.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="UNPUXHost_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">UNPUXHost.exe</Image>
+				<ImageLoaded condition="contains">WININET.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">WfsR.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">mapistub.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">MSI.DLL</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">srpapi.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">FxsCompose.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">scansetting.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="WFS_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">WFS.exe</Image>
+				<ImageLoaded condition="contains">WindowsCodecs.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="wsqmcons_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">wsqmcons.exe</Image>
+				<ImageLoaded condition="contains">KtmW32.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>	
+		<RuleGroup name="onedrivestandaloneupdater_sideload" groupRelation="and">
+			<!-- Log only image loads where modules match these conditions -->
+			<ImageLoad onmatch="include">
+				<Image condition="contains">onedrivestandaloneupdater.exe</Image>
+				<ImageLoaded condition="contains">wofutil.dll</ImageLoaded>
+				<Signature condition="is not">Microsoft Windows</Signature>
+			</ImageLoad>
+		</RuleGroup>
+  </EventFiltering>
+</Sysmon>
